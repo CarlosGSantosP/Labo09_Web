@@ -10,3 +10,5 @@ const createUser = (request, response) => {
     response.status(201).send(`User added with ID: ${results.rows[0].id}`)
   })
 }
+
+export { createUser };

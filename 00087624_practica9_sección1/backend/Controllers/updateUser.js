@@ -16,3 +16,5 @@ const updateUser = (request, response) => {
     }
   )
 }
+
+export { updateUser };

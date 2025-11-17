@@ -7,7 +7,7 @@ import { verifyToken } from "../Utils/Middleware/index.js";
 import { SingIn } from "../Controllers/signin.js";
 import { SingUp } from "../Controllers/signup.js";
 import { displayHome } from "../Controllers/displayHome.js";
-import { getUserById, getUsers, getUsersDesc } from "../Controllers/getUsers.js";
+import { getUserById, getUsers} from "../Controllers/getUsers.js";
 import { updateUser } from "../Controllers/updateUser.js";
 import { deleteUser } from "../Controllers/deleteUser.js";
 import { createUser } from "../Controllers/createUser.js";
@@ -23,6 +23,6 @@ router.get("/users", verifyToken, getUsers);
 router.get("/users/:id", verifyToken, getUserById);
 router.put("/users/:id", verifyToken, updateUser);
 router.delete('/users/:id', verifyToken, deleteUser);
-router.get("/users", createUser)
+router.post("/users", verifyToken, createUser);
 
 export default router;
